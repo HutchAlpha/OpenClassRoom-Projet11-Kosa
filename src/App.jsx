@@ -1,33 +1,34 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from 'react';
+import './App.scss';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
+      <h1>Bienvenue dans votre première application React !</h1>
+
       <div className="card">
+        {}
         <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+          Le compteur est à {count}
         </button>
         <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+          Modifiez <code>src/App.jsx</code> et sauvegardez pour voir les changements en direct.
         </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+      <div className="presentation">
+        <h2>Les concepts de base de React</h2>
+        <ul>
+          <li><strong>Composants :</strong> Les composants sont les blocs de construction de base d'une application React. Ce sont des fonctions JavaScript qui retournent du JSX. Le composant actuel s'appelle `App`.</li>
+          <li><strong>JSX :</strong> C'est une extension de la syntaxe JavaScript qui permet d'écrire du code qui ressemble à du HTML. Il est ensuite transformé en appels de fonctions JavaScript.</li>
+          <li><strong>Props :</strong> Abréviation de "propriétés", les props permettent de passer des données d'un composant parent à un composant enfant.</li>
+          <li><strong>State (État) :</strong> L'état permet à un composant de "se souvenir" d'informations comme les entrées utilisateur. `useState` est le Hook qui gère l'état.</li>
+        </ul>
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
