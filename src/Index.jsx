@@ -1,8 +1,8 @@
-import '../public/Scss/App.scss';
+import '../public/Scss/Index.scss';
 import ImgPresentation from '../public/Img/fond.png';
 import Donnee from '../public/donnee.json';
 
-function App() {
+function AppIndex() {
 
   
   return (
@@ -25,4 +25,4 @@ function App() {
   );
 }
 
-export default App;
+export default AppIndex;
