@@ -3,12 +3,12 @@ import Logo from '../public/Img/logo.svg';
 
 function Header() {
   return (
-    <header className="Header">
+    <header className="header">
         <img src={Logo} alt="Logo Kasa" />
-        <div className="nav-links">
+        <nav className="header__nav">
             <a href="/">Accueil</a>
-            <a href="/about">À Propos</a>
-        </div>
+            <a href="/about">À propos</a>
+        </nav>
     </header>
   );
 }

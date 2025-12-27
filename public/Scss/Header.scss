@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+
+  &__nav {
+    display: flex;
+    gap: 30px;
+
+    a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  img {
+    height: 40px;
+  }
+}
