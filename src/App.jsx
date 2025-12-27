@@ -1,8 +1,10 @@
 import '../public/Scss/App.scss';
 import ImgPresentation from '../public/Img/fond.png';
+import Donnee from '../public/donnee.json';
 
 function App() {
 
+  
   return (
     <>
       <div className="ImgPresentation">
@@ -11,7 +13,13 @@ function App() {
       </div>
 
       <article className="Article">
-        <h1 className="Article__Title"></h1>
+        <div className="Cards">
+          {Donnee.map((item) => (
+            <div className="Card" key={item.id}>
+              <h2 className="Card__Title">{item.title}</h2>
+            </div>
+          ))}
+        </div>
       </article>
     </>
   );

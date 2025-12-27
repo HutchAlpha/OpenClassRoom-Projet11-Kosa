@@ -1,8 +1,6 @@
-#root {
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-}
+/* =========================
+   BANNIÈRE
+   ========================= */
 
 .ImgPresentation {
   position: relative;
@@ -34,5 +32,86 @@
     font-size: 48px;
     font-weight: 500;
     text-align: center;
+  }
+}
+
+/* =========================
+   ARTICLE
+   ========================= */
+
+.Article {
+  margin: 50px 100px;
+  padding: 50px;
+  background-color: #f6f6f6;
+  border-radius: 25px;
+}
+
+/* =========================
+   GRID DES CARDS
+   ========================= */
+
+.Cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+
+/* =========================
+   CARD
+   ========================= */
+
+.Card {
+  position: relative;
+  height: 340px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #ff6060 0%, #cc4b4b 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+
+  &__Title {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: left;
+  }
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 1024px) {
+  .Cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .ImgPresentation {
+    margin: 0 20px;
+    height: 111px;
+    border-radius: 10px;
+
+    &__Title {
+      font-size: 24px;
+      padding: 0 16px;
+      text-align: left;
+    }
+  }
+
+  .Article {
+    margin: 22px 20px;
+    padding: 22px;
+    border-radius: 10px;
+  }
+
+  .Cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .Card {
+    height: 255px;
   }
 }
