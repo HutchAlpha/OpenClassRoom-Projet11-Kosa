@@ -1,0 +1,30 @@
+.footer {
+  background-color: #000;
+  height: 209px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  &__logo {
+    height: 40px;
+  }
+
+  &__text {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    &__text {
+      font-size: 12px;
+      text-align: center;
+      padding: 0 20px;
+    }
+  }
+}
+
