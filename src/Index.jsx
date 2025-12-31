@@ -4,7 +4,6 @@ import Donnee from '../public/donnee.json';
 
 function AppIndex() {
 
-  
   return (
     <>
       <div className="ImgPresentation">
