@@ -5,11 +5,19 @@ import React from 'react';
 
 function Apropos() {
 
-  const [indexOuvert, setIndexOuvert] = React.useState(null);
+  const [indexOuverts, setIndexOuverts] = React.useState([]);
 
   const toggle = (index) => {
-    setIndexOuvert((prev) => (prev === index ? null : index));
+    setIndexOuverts((prev) => {
+      // Si ouvert → on le ferme
+      if (prev.includes(index)) {
+        return prev.filter(i => i !== index);
+      }
+      // Sinon → on l'ouvre
+      return [...prev, index];
+    });
   };
+
 
   return (
     <>
@@ -17,9 +25,10 @@ function Apropos() {
         <img src={ImgPresentation} alt="Background" className="BackgroundImg" />
       </div>
 
+      <div className="contenue">
       <div className="accordeon">
         {DonneeArcordeon.map((item, index) => {
-          const ouvert = indexOuvert === index;
+          const ouvert = indexOuverts.includes(index); 
 
           return (
             <div key={index} className={`accordeon-item ${ouvert ? 'est-ouvert' : ''}`}>
@@ -28,13 +37,14 @@ function Apropos() {
                 <span>{item.titre}</span>
                 <span className="accordeon-icone">⌃</span>
               </button>
-              
+
               <div className="accordeon-contenu">
                 <p>{item.texte}</p>
               </div>
             </div>
           );
         })}
+        </div>
       </div>
     </>
   );
