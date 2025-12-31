@@ -1,17 +1,16 @@
-import React from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import '../public/Scss/Index.scss';
 
 function App() {
-  return (
+    return (
     <>
-      <Header />
-      <main>
-        <Outlet />
-      </main>
-      <Footer />
+        <Header />
+            <main>
+                <Outlet />
+            </main>
+        <Footer />
     </>
   );
 }
