@@ -21,10 +21,9 @@ const router = createBrowserRouter([
         element: <Apropos />,
       },
       {
-        
-        path: '/{item.id}/detail',
+        path: '/:id/detail',
         element: <Detail />,
-      },
+      }
     ],
   },
 ])
