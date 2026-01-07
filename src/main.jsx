@@ -5,6 +5,7 @@ import '../public/Scss/Index.scss'
 import App from './App.jsx'
 import Index from './Index.jsx'
 import Apropos from './Apropos.jsx'
+import Detail from './Detail.jsx';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,11 @@ const router = createBrowserRouter([
       {
         path: '/apropos',
         element: <Apropos />,
+      },
+      {
+        
+        path: '/{item.id}/detail',
+        element: <Detail />,
       },
     ],
   },
