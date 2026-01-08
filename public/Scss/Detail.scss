@@ -22,3 +22,179 @@
     object-fit: cover;
   }
 }
+
+
+
+/* =========================
+   CONTENEUR GLOBAL
+========================= */
+
+.Detail {
+  width: 80%;
+  margin: 40px auto 80px;
+  font-family: sans-serif;
+  color: #ff6060;
+}
+
+/* =========================
+   TITRE + INFOS
+========================= */
+
+.BlockTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 30px;
+
+  &__Left {
+    max-width: 70%;
+
+    h2 {
+      font-size: 32px;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    p {
+      color: black;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__Tags {
+    display: flex;
+    gap: 10px;
+
+    span {
+      background-color: #ff6060;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+  }
+
+  &__Right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+
+    .host {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      span {
+        font-size: 18px;
+        text-align: right;
+      }
+
+      img {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+
+    .rating {
+      display: flex;
+      gap: 8px;
+
+      svg {
+        width: 20px;
+        height: 20px;
+        fill: #ff6060;
+
+        &.inactive {
+          fill: #e3e3e3;
+        }
+      }
+    }
+  }
+}
+
+/* =========================
+   ACCORDÉONS (Description / Équipements)
+========================= */
+
+.contenueDetail {
+  width: 100%;
+  margin-top: 40px;
+
+  .accordeon {
+    display: flex;
+    gap: 50px;
+
+    .accordeon-item {
+      width: 50%;
+      border-radius: 5px;
+      overflow: hidden;
+
+      .accordeon-entete {
+        padding: 15px 20px;
+        background-color: #ff6060;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        font-size: 18px;
+        border-radius: 5px;
+      }
+
+      .accordeon-icone {
+        transition: transform 0.3s ease;
+      }
+
+      .accordeon-contenu {
+        background-color: #f7f7f7;
+        color: black;
+        padding: 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+        line-height: 1.6;
+      }
+
+      &.est-ouvert {
+        .accordeon-icone {
+          transform: rotate(180deg);
+        }
+
+        .accordeon-contenu {
+          max-height: 300px;
+          padding: 20px;
+        }
+      }
+    }
+  }
+}
+
+
+.ImgPresentationDetail {
+  position: relative;
+  height: 400px;
+  margin: 0 100px;
+  border-radius: 25px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .BackgroundImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
