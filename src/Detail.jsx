@@ -1,6 +1,5 @@
 import React from 'react';
 import '../public/Scss/Detail.scss';
-import ImgPresentation from '../public/Img/fond.png';
 import Donnee from '../public/donnee.json';
 import { useParams } from 'react-router-dom';
 
@@ -27,17 +26,24 @@ function Detail() {
 
   //!Gestion des images
 
+  let images = item.pictures;
+  const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
+
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  }
+
 
 
   //!Gestion des étoiles
 
 
-  
+
 
   return (
     <>
       <div className="ImgPresentationDetail">
-        <img src={ImgPresentation} alt="Background" className="BackgroundImg" />
+        <img src={images[currentImageIndex]} alt="Background" className="BackgroundImg" />
       </div>
 
       <div className="Detail">
