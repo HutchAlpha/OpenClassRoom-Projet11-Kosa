@@ -42,7 +42,7 @@ function Detail() {
   //!Gestion des étoiles
 
   let totalStars = 5;
-  let VEtoile = parseInt(item.VEtoile);
+  let VEtoile = parseInt(item.rating);
   let starsArray = [];
   for (let i = 1; i <= totalStars; i++) {
     if (i <= VEtoile) {
@@ -80,7 +80,7 @@ function Detail() {
               <img src={item.host.picture} alt={item.host.name} />
             </div>
 
-            <div className="rating">
+            <div className="VEtoile">
               {starsArray.map((star, index) => (
                 <span key={index} className={star === 'plein' ? 'star plein' : 'star vide'}>
                   {star === 'plein' ? '★' : '☆'}
