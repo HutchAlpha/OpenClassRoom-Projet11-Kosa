@@ -41,7 +41,16 @@ function Detail() {
 
   //!Gestion des étoiles
 
-  
+  let totalStars = 5;
+  let VEtoile = parseInt(item.VEtoile);
+  let starsArray = [];
+  for (let i = 1; i <= totalStars; i++) {
+    if (i <= VEtoile) {
+      starsArray.push('plein'); 
+    } else {
+      starsArray.push('vide'); 
+    }
+  }
 
 
   return (
@@ -72,6 +81,12 @@ function Detail() {
             </div>
 
             <div className="rating">
+              {starsArray.map((star, index) => (
+                <span key={index} className={star === 'plein' ? 'star plein' : 'star vide'}>
+                  {star === 'plein' ? '★' : '☆'}
+                </span>
+              ))}
+
               {/* étoiles */}
             </div>
           </div>
