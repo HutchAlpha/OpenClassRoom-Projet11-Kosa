@@ -5,10 +5,13 @@ import Donnee from '../public/donnee.json';
 import { useParams } from 'react-router-dom';
 
 function Detail() {
+  //!Récupération de l'id dans l'URL
   const { id } = useParams();
 
   const item = Donnee.find(element => element.id === id);
 
+
+  //!Gestion de l'accordéon
   const [indexOuverts, setIndexOuverts] = React.useState([]);
 
   const toggle = (index) => {
@@ -21,6 +24,15 @@ function Detail() {
       return [...prev, index];
     });
   };
+
+  //!Gestion des images
+
+
+
+  //!Gestion des étoiles
+
+
+  
 
   return (
     <>
