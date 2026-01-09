@@ -29,6 +29,10 @@ function Detail() {
   let images = item.pictures;
   const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
 
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  }
+  
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
   }
@@ -37,13 +41,15 @@ function Detail() {
 
   //!Gestion des étoiles
 
-
+  
 
 
   return (
     <>
       <div className="ImgPresentationDetail">
         <img src={images[currentImageIndex]} alt="Background" className="BackgroundImg" />
+        <button className="prev-button" onClick={prevImage}>&lt;</button>
+        <button className="next-button" onClick={nextImage}>&gt;</button>
       </div>
 
       <div className="Detail">
