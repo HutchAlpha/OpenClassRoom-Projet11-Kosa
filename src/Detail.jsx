@@ -1,3 +1,4 @@
+import React from 'react';
 import '../public/Scss/Detail.scss';
 import ImgPresentation from '../public/Img/fond.png';
 import Donnee from '../public/donnee.json';
@@ -8,7 +9,18 @@ function Detail() {
 
   const item = Donnee.find(element => element.id === id);
 
-  
+  const [indexOuverts, setIndexOuverts] = React.useState([]);
+
+  const toggle = (index) => {
+    setIndexOuverts((prev) => {
+      // Si ouvert → on le ferme
+      if (prev.includes(index)) {
+        return prev.filter(i => i !== index);
+      }
+      // Sinon → on l'ouvre 
+      return [...prev, index];
+    });
+  };
 
   return (
     <>
@@ -43,13 +55,26 @@ function Detail() {
 
         <div className="contenueDetail">
           <div className="accordeon">
-            <div className="accordeon-item">
-              <div className="accordeon-entete">Description <span className="accordeon-icone">⌃</span></div>
-              <div className="accordeon-contenu">{item.description}</div>
+
+            {/* Description */}
+            <div className={`accordeon-item ${indexOuverts.includes(0) ? 'est-ouvert' : ''}`}>
+              <button className="accordeon-entete" onClick={() => toggle(0)}>
+                <span>Description</span>
+                <span className="accordeon-icone">⌃</span>
+              </button>
+
+              <div className="accordeon-contenu">
+                <p>{item.description}</p>
+              </div>
             </div>
 
-            <div className="accordeon-item">
-              <div className="accordeon-entete">Équipements <span className="accordeon-icone">⌃</span></div>
+            {/* Équipements */}
+            <div className={`accordeon-item ${indexOuverts.includes(1) ? 'est-ouvert' : ''}`}>
+              <button className="accordeon-entete" onClick={() => toggle(1)}>
+                <span>Équipements</span>
+                <span className="accordeon-icone">⌃</span>
+              </button>
+
               <div className="accordeon-contenu">
                 <ul>
                   {item.equipments.map(eq => (
@@ -58,10 +83,10 @@ function Detail() {
                 </ul>
               </div>
             </div>
+
           </div>
         </div>
       </div>
-
     </>
   );
 }
