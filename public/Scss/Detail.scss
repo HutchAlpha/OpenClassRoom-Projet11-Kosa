@@ -9,6 +9,10 @@
   align-items: center;
   justify-content: center;
 
+  @media (max-width: 768px) {
+    margin:0px
+  }
+
   .BackgroundImg {
     width: 100%;
     height: 100%;
@@ -61,6 +65,12 @@
   color: #ff6060;
 }
 
+  @media (max-width: 768px) {
+    .Detail {
+    width: 100%;
+    }
+  }
+
 /* =========================
    TITRE + INFOS
 ========================= */
@@ -70,6 +80,11 @@
   justify-content: space-between;
   align-items: flex-start;
   margin-top: 30px;
+
+    @media (max-width: 768px) {
+    flex-direction: column;
+
+    }
 
   &__Left {
     max-width: 70%;
@@ -99,6 +114,10 @@
       font-size: 14px;
       white-space: nowrap;
     }
+      @media (max-width: 768px) {
+
+      flex-wrap: wrap;
+      }
   }
 
   &__Right {
@@ -153,6 +172,10 @@
   .accordeon {
     display: flex;
     gap: 50px;
+
+      @media (max-width: 768px) {
+    flex-direction: column;
+      }
 
     .accordeon-item {
       width: 50%;
