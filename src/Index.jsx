@@ -16,6 +16,7 @@ function AppIndex() {
           {Donnee.map((item) => (
           <Link to={`/${item.id}/detail`}>
             <div className="Card" key={item.id}>
+              <img src={item.cover} alt={item.title} className="Card__Img"/>
               <h2 className="Card__Title">{item.title}</h2>
             </div>
           </Link>
