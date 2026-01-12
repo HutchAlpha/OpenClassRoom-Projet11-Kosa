@@ -63,8 +63,12 @@ function Detail() {
     <>
       <div className="ImgPresentationDetail">
         <img src={images[currentImageIndex]} alt="Background" className="BackgroundImg" />
-        <button className="prev-button" onClick={prevImage}>&lt;</button>
-        <button className="next-button" onClick={nextImage}>&gt;</button>
+        {images.length > 1 && (
+          <>
+            <button className="prev-button" onClick={prevImage}>&lt;</button>
+            <button className="next-button" onClick={nextImage}>&gt;</button>
+          </>
+        )}
       </div>
 
       <div className="Detail">
