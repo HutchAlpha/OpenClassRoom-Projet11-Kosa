@@ -1,0 +1,50 @@
+.NotFound {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    font-family: sans-serif;
+    color: #ff6060;
+    text-align: center;
+
+    h1 {
+        font-size: 96px;
+        font-weight: 700;
+        line-height: 1;
+        margin: 0;
+    }
+
+    p {
+        font-size: 14px;
+        margin: 0;
+        padding: 0 20px;
+    }
+
+    button {
+        background: none;
+        border: none;
+        color: #000;
+        font-size: 12px;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    @media (min-width: 768px) {
+        gap: 60px;
+
+        h1 {
+        font-size: 288px;
+        }
+
+        p {
+        font-size: 18px;
+        padding: 0;
+        }
+
+        button {
+        font-size: 14px;
+        }
+    }
+}

@@ -6,6 +6,8 @@ import App from './App.jsx'
 import Index from './Index.jsx'
 import Apropos from './Apropos.jsx'
 import Detail from './Detail.jsx';
+import NotFound from './NotFound.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -23,7 +25,11 @@ const router = createBrowserRouter([
       {
         path: '/:id/detail',
         element: <Detail />,
-      }
+      },
+      {
+        path: '*',
+        element: <NotFound />,
+      },
     ],
   },
 ])
