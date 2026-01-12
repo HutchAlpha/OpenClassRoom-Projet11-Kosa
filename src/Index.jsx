@@ -18,7 +18,7 @@ function AppIndex() {
             <div className="Card" key={item.id}>
               <h2 className="Card__Title">{item.title}</h2>
             </div>
-            </Link>
+          </Link>
           ))}
         </div>
       </article>

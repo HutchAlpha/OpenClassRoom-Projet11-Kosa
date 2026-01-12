@@ -1,25 +1,17 @@
-
 .ImgPresentationDetail {
   position: relative;
-  height: 400px;
-  margin: 0 100px;
-  border-radius: 25px;
+  width: 100%;
+  height: 260px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  @media (max-width: 768px) {
-    margin:0px
+  @media (min-width: 768px) {
+    border-radius: 25px;
   }
 
   .BackgroundImg {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
   }
 
   .prev-button,
@@ -27,32 +19,24 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: none;
+    background: rgba(0, 0, 0, 0.3);
     border: none;
-    color: white;
-    font-size: 80px;
-    cursor: pointer;
+    color: #fff;
+    font-size: 32px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     z-index: 2;
   }
 
   .prev-button {
-    left: 20px;
+    left: 10px;
   }
 
   .next-button {
-    right: 20px;
-  }
-
-  .image-counter {
-    position: absolute;
-    bottom: 20px;
-    color: white;
-    font-size: 18px;
-    z-index: 2;
+    right: 10px;
   }
 }
-
-
 
 /* =========================
    CONTENEUR GLOBAL
@@ -65,96 +49,99 @@
   color: #ff6060;
 }
 
-  @media (max-width: 768px) {
-    .Detail {
-    width: 100%;
-    }
-  }
-
 /* =========================
    TITRE + INFOS
 ========================= */
 
 .BlockTitle {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-top: 30px;
+  flex-direction: column;
+  gap: 15px;
 
-    @media (max-width: 768px) {
-    flex-direction: column;
-
-    }
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 30px;
+  }
 
   &__Left {
-    max-width: 70%;
-
     h2 {
-      font-size: 32px;
+      font-size: 20px;
       font-weight: 500;
       margin-bottom: 5px;
     }
 
     p {
-      color: black;
-      font-size: 18px;
-      margin-bottom: 15px;
+      color: #000;
+      font-size: 14px;
+      margin-bottom: 10px;
     }
   }
 
   &__Tags {
     display: flex;
-    gap: 10px;
+    gap: 8px;
+    flex-wrap: wrap;
 
     span {
       background-color: #ff6060;
-      color: white;
-      padding: 5px 15px;
-      border-radius: 20px;
-      font-size: 14px;
-      white-space: nowrap;
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 12px;
     }
-      @media (max-width: 768px) {
-
-      flex-wrap: wrap;
-      }
   }
 
   &__Right {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 15px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 15px;
+    }
 
     .host {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
 
       span {
-        font-size: 18px;
+        font-size: 14px;
         text-align: right;
+        max-width: 80px;
       }
 
       img {
-        width: 64px;
-        height: 64px;
+        width: 32px;
+        height: 32px;
         border-radius: 50%;
         object-fit: cover;
+
+        @media (min-width: 768px) {
+          width: 64px;
+          height: 64px;
+        }
       }
     }
 
     .VEtoile {
       display: flex;
-      gap: 8px;
+      gap: 4px;
 
-      svg {
-        width: 20px;
-        height: 20px;
-        fill: #ff6060;
+      .star {
+        font-size: 16px;
 
-        &.inactive {
-          fill: #e3e3e3;
+        &.plein {
+          color: #ff6060;
+        }
+
+        &.vide {
+          color: #e3e3e3;
         }
       }
     }
@@ -166,34 +153,38 @@
 ========================= */
 
 .contenueDetail {
-  width: 100%;
-  margin-top: 40px;
+  margin-top: 25px;
 
   .accordeon {
     display: flex;
-    gap: 50px;
-
-      @media (max-width: 768px) {
     flex-direction: column;
-      }
+    gap: 15px;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      gap: 50px;
+    }
 
     .accordeon-item {
-      width: 50%;
+      width: 100%;
       border-radius: 5px;
       overflow: hidden;
 
+      @media (min-width: 768px) {
+        width: 50%;
+      }
+
       .accordeon-entete {
         width: 100%;
-        border: 0px;
-        padding: 15px 20px;
+        border: none;
+        padding: 12px 15px;
         background-color: #ff6060;
         color: #fff;
         display: flex;
         justify-content: space-between;
         align-items: center;
         cursor: pointer;
-        font-size: 18px;
-        border-radius: 5px;
+        font-size: 14px;
       }
 
       .accordeon-icone {
@@ -202,12 +193,17 @@
 
       .accordeon-contenu {
         background-color: #f7f7f7;
-        color: black;
-        padding: 0 20px;
+        color: #000;
+        padding: 0 15px;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease, padding 0.3s ease;
+        font-size: 14px;
         line-height: 1.6;
+
+        ul {
+          padding-left: 15px;
+        }
       }
 
       &.est-ouvert {
@@ -216,8 +212,8 @@
         }
 
         .accordeon-contenu {
-          max-height: 300px;
-          padding: 20px;
+          max-height: 500px;
+          padding: 15px;
         }
       }
     }
