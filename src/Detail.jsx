@@ -1,7 +1,7 @@
 import React from 'react';
 import '../public/Scss/Detail.scss';
 import Donnee from '../public/donnee.json';
-import { useParams } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 
 function Detail() {
   //!Récupération de l'id dans l'URL
@@ -9,6 +9,12 @@ function Detail() {
 
   const item = Donnee.find(element => element.id === id);
 
+
+  //!Ajout erreur 404
+  
+  if (!item) {
+    return <Navigate to="/404" replace />;
+  }
 
   //!Gestion de l'accordéon
   const [indexOuverts, setIndexOuverts] = React.useState([]);
