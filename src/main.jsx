@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import '../public/Scss/Index.scss'
 import App from './App.jsx'
-import Index from './Index.jsx'
+import Index from './index.jsx'
 import Apropos from './Apropos.jsx'
 import Detail from './Detail.jsx';
 import NotFound from './NotFound.jsx';

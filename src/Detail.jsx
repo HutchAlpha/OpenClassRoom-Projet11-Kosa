@@ -2,6 +2,7 @@ import React from 'react';
 import '../public/Scss/Detail.scss';
 import Donnee from '../public/donnee.json';
 import { useParams, Navigate } from 'react-router-dom';
+import Arcordeon from './Props/Arcordeon';
 
 function Detail() {
   //!Récupération de l'id dans l'URL
@@ -15,20 +16,6 @@ function Detail() {
   if (!item) {
     return <Navigate to="/404" replace />;
   }
-
-  //!Gestion de l'accordéon
-  const [indexOuverts, setIndexOuverts] = React.useState([]);
-
-  const toggle = (index) => {
-    setIndexOuverts((prev) => {
-      // Si ouvert → on le ferme
-      if (prev.includes(index)) {
-        return prev.filter(i => i !== index);
-      }
-      // Sinon → on l'ouvre 
-      return [...prev, index];
-    });
-  };
 
   //!Gestion des images
 
@@ -103,37 +90,24 @@ function Detail() {
         </div>
 
         <div className="contenueDetail">
-          <div className="accordeon">
-
-            {/* Description */}
-            <div className={`accordeon-item ${indexOuverts.includes(0) ? 'est-ouvert' : ''}`}>
-              <button className="accordeon-entete" onClick={() => toggle(0)}>
-                <span>Description</span>
-                <span className="accordeon-icone">⌃</span>
-              </button>
-
-              <div className="accordeon-contenu">
-                <p>{item.description}</p>
-              </div>
-            </div>
-
-            {/* Équipements */}
-            <div className={`accordeon-item ${indexOuverts.includes(1) ? 'est-ouvert' : ''}`}>
-              <button className="accordeon-entete" onClick={() => toggle(1)}>
-                <span>Équipements</span>
-                <span className="accordeon-icone">⌃</span>
-              </button>
-
-              <div className="accordeon-contenu">
-                <ul>
-                  {item.equipments.map(eq => (
-                    <li key={eq}>{eq}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-          </div>
+          <Arcordeon 
+            donnees={[
+              {
+                titre: 'Description',
+                contenu: <p>{item.descriptions}</p>
+              },
+              {
+                titre: 'Équipements',
+                contenu: (
+                  <ul>
+                    {item.equipments.map(eq => (
+                      <li key={eq}>{eq}</li>
+                    ))}
+                  </ul>
+                )
+              }
+            ]} 
+          />
         </div>
       </div>
     </>
