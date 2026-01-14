@@ -94,7 +94,7 @@ function Detail() {
             donnees={[
               {
                 titre: 'Description',
-                contenu: <p>{item.descriptions}</p>
+                contenu: <p>{item.description}</p>
               },
               {
                 titre: 'Équipements',
