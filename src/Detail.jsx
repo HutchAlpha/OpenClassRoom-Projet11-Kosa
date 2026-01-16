@@ -3,6 +3,7 @@ import '../public/Scss/Detail.scss';
 import Donnee from '../public/donnee.json';
 import { useParams, Navigate } from 'react-router-dom';
 import Arcordeon from './Props/Arcordeon';
+import Carrousel from './Props/Carousel';
 
 function Detail() {
   //!Récupération de l'id dans l'URL
@@ -16,21 +17,6 @@ function Detail() {
   if (!item) {
     return <Navigate to="/404" replace />;
   }
-
-  //!Gestion des images
-
-  let images = item.pictures;
-  const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
-
-  const prevImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-  }
-  
-  const nextImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-  }
-
-
 
   //!Gestion des étoiles
 
@@ -48,15 +34,7 @@ function Detail() {
 
   return (
     <>
-      <div className="ImgPresentationDetail">
-        <img src={images[currentImageIndex]} alt="Background" className="BackgroundImg" />
-        {images.length > 1 && (
-          <>
-            <button className="prev-button" onClick={prevImage}>&lt;</button>
-            <button className="next-button" onClick={nextImage}>&gt;</button>
-          </>
-        )}
-      </div>
+      <Carrousel images={images} />
 
       <div className="Detail">
         <div className="BlockTitle">
