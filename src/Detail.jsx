@@ -34,7 +34,7 @@ function Detail() {
 
   return (
     <>
-      <Carrousel images={images} />
+      <Carrousel images={item.pictures} />
 
       <div className="Detail">
         <div className="BlockTitle">
