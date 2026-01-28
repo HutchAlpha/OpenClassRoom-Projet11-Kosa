@@ -257,22 +257,23 @@
 
       .accordeon-entete {
         width: 100%;
-        border: none;
         padding: 10px 15px;
         background-color: #FF6060;
         color: #fff;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        border: none;
+
         cursor: pointer;
-        font-size: 13px;
-        font-weight: 500;
+        font-size: 22px;
+        font-weight: bold;
         border-radius: 5px;
 
-        @media (min-width: 768px) {
-          padding: 13px 20px;
-          font-size: 18px;
-          border-radius: 10px;
+        @media (max-width: 768px) {
+          padding: 10px 15px;
+          font-size: 13px;
+          border-radius: 5px;
         }
       }
 
@@ -293,21 +294,21 @@
       }
 
       .accordeon-contenu {
-        background-color: #F6F6F6;
+        background-color: #f6f6f666;
         padding: 0;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
         border-radius: 0 0 5px 5px;
-        font-size: 12px;
+        font-size: 16px;
         line-height: 1.7;
         font-weight: 400;
         opacity: 0;
         visibility: hidden;
         color: #000000;
-        @media (min-width: 768px) {
+        @media (max-width: 768px) {
           border-radius: 0 0 10px 10px;
-          font-size: 18px;
+          font-size: 12px;
           line-height: 1.4;
         }
 
@@ -337,12 +338,12 @@
       &.est-ouvert {
         .accordeon-contenu {
           max-height: 500px;
-          padding: 20px 12px;
+          padding: 15px 20px 19px 20px;
           opacity: 1;
           visibility: visible;
 
-          @media (min-width: 768px) {
-            padding: 36px 20px 19px 20px;
+          @media (max-width: 768px) {
+            padding: 20px 12px;
           }
         }
       }
