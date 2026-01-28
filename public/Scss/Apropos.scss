@@ -31,7 +31,7 @@
       }
 
       .accordeon-entete {
-        padding: 13px 20px;
+        padding: 10px 20px;
         background-color: #FF6060;
         color: #fff;
         display: flex;
@@ -39,8 +39,8 @@
         align-items: center;
         border: none;
         cursor: pointer;
-        font-size: 18px;
-        font-weight: 500;
+        font-size: 22px;
+        font-weight: bold;
         border-radius: 10px;
 
         @media (max-width: 768px) {
@@ -65,7 +65,6 @@
 
       .accordeon-contenu {
         background-color: #F6F6F6;
-        color: #FF6060;
         padding: 0;
         max-height: 0;
         overflow: hidden;
@@ -74,6 +73,9 @@
         font-size: 18px;
         line-height: 1.4;
         font-weight: 400;
+        opacity: 0;
+        visibility: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
 
         @media (max-width: 768px) {
           border-radius: 0 0 5px 5px;
@@ -83,6 +85,8 @@
 
         p {
           margin: 0;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
         }
       }
 
@@ -93,7 +97,9 @@
 
         .accordeon-contenu {
           max-height: 500px;
-          padding: 36px 20px 19px 20px;
+          padding: 15px 20px 19px 20px;
+          opacity: 1;
+          visibility: visible;
 
           @media (max-width: 768px) {
             padding: 20px 12px;
