@@ -1,29 +1,40 @@
 .footer {
-  background-color: #000;
+  background-color: #000000;
   height: 209px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 28px;
+  margin-top: auto;
+
+  @media (max-width: 768px) {
+    height: 209px;
+    gap: 20px;
+  }
 
   &__logo {
     height: 40px;
+    width: auto;
+    filter: brightness(0) invert(1);
+
+    @media (max-width: 768px) {
+      height: 40px;
+    }
   }
 
   &__text {
-    color: #fff;
-    font-size: 20px;
+    color: #ffffff;
+    font-size: 24px;
     font-weight: 500;
-  }
-}
+    margin: 0;
 
-@media (max-width: 768px) {
-  .footer {
-    &__text {
+    @media (max-width: 768px) {
       font-size: 12px;
       text-align: center;
       padding: 0 20px;
+      max-width: 133px;
+      line-height: 1.3;
     }
   }
 }
