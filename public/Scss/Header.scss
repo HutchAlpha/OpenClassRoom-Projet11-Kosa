@@ -2,24 +2,52 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 40px 100px;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  &__logo {
+    height: 68px;
+    width: auto;
+  }
 
   &__nav {
     display: flex;
-    gap: 30px;
-
-    a {
-      text-decoration: none;
-      color: #000;
-      font-weight: 500;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
+    gap: 57px;
+    align-items: center;
   }
 
-  img {
-    height: 40px;
+  &__nav-link {
+    text-decoration: none;
+    color: #000000;
+    font-size: 20px;
+    transition: text-decoration 0.3s ease;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &.active {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 20px;
+
+    &__logo {
+      height: 47px;
+    }
+
+    &__nav {
+      gap: 26px;
+    }
+
+    &__nav-link {
+      font-size: 12px;
+      text-transform: uppercase;
+    }
   }
 }
