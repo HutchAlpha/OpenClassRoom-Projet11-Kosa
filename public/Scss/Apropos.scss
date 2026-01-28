@@ -1,26 +1,38 @@
 .contenue {
-  width: 80%;           
-  
-  margin: 0 auto;   
-  padding: 60px 20px;    
+  width: 100%;
+  max-width: 1023px;
+  margin: 0 auto;
+  padding: 0 0 60px;
+
+  @media (max-width: 768px) {
+    padding: 0 0 30px;
+    max-width: 100%;
+  }
 
   .accordeon {
-    width: 100%;         
+    width: 100%;
 
     .accordeon-item {
       border-radius: 5px;
-      overflow: hidden;
-      margin-bottom: 15px;
+      margin-bottom: 30px;
+
+      @media (max-width: 768px) {
+        margin-bottom: 20px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
 
       .accordeon-entete,
       .accordeon-contenu {
-        width: 100%;       
+        width: 100%;
         box-sizing: border-box;
       }
 
       .accordeon-entete {
-        padding: 20px;
-        background-color: #ff6060;
+        padding: 13px 20px;
+        background-color: #FF6060;
         color: #fff;
         display: flex;
         justify-content: space-between;
@@ -28,21 +40,50 @@
         border: none;
         cursor: pointer;
         font-size: 18px;
+        font-weight: 500;
+        border-radius: 10px;
+
+        @media (max-width: 768px) {
+          padding: 10px 15px;
+          font-size: 13px;
+          border-radius: 5px;
+        }
       }
 
       .accordeon-icone {
-        display: inline-block;
+        display: flex;
         transition: transform 0.3s ease;
         transform: rotate(0deg);
+        width: 32px;
+        height: 32px;
+
+        @media (max-width: 768px) {
+          width: 20px;
+          height: 20px;
+        }
       }
 
       .accordeon-contenu {
-        background-color: #f7f7f7;
-        color: black;
-        padding: 0 20px;
+        background-color: #F6F6F6;
+        color: #FF6060;
+        padding: 0;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease, padding 0.3s ease;
+        border-radius: 0 0 10px 10px;
+        font-size: 18px;
+        line-height: 1.4;
+        font-weight: 400;
+
+        @media (max-width: 768px) {
+          border-radius: 0 0 5px 5px;
+          font-size: 12px;
+          line-height: 1.7;
+        }
+
+        p {
+          margin: 0;
+        }
       }
 
       &.est-ouvert {
@@ -51,8 +92,12 @@
         }
 
         .accordeon-contenu {
-          max-height: 300px;
-          padding: 20px;
+          max-height: 500px;
+          padding: 36px 20px 19px 20px;
+
+          @media (max-width: 768px) {
+            padding: 20px 12px;
+          }
         }
       }
     }
